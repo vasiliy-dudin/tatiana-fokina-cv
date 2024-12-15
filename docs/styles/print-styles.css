@@ -1,10 +1,11 @@
 :root {
-	--h1-color: rgb(40, 40, 40);
+	--h1-color: rgb(123, 0, 199);
 	--h2-color: rgb(40, 40, 40);
 	--h3-color: rgb(60, 60, 60);
 	--text-color: rgb(65, 65, 65);
 	--underline-color: rgb(138, 138, 138);
-	--border-color: rgb(198, 208, 228);
+	--border-color: rgba(0, 0, 0, 0.20);
+	--sections-gap: 32px;
 }
 
 @media print {
@@ -31,29 +32,21 @@
 
 	.header {
 		display: block;
-		margin-bottom: 20px;
-		padding-top: 5px;
-		padding-left: 24px;
-		padding-right: 24px;
-		padding-bottom: 12px;
-		border-left: 5px solid var(--border-color);
-		border-bottom: 0;
+		margin-bottom: var(--sections-gap);
+		padding: 0 0 var(--sections-gap);
+		border-bottom: 1px solid var(--border-color);
 	}
 
 	.header__link {
 		display: none;
 	}
 
-	.header__contacts-list {
-		gap: 18px;
-	}
-
 	.header__desc {
-		display: initial;
+		display: block;
 	}
 
 	.header__contact-link-pdf {
-		display: initial;
+		display: inline;
 	}
 
 	.header__contact-link-site {
@@ -63,7 +56,10 @@
 	.header__title {
 		margin: 0;
 		font-size: 31px;
-		line-height: 44px;
+		
+		font-family: 'Arial black';
+		font-weight: 800;
+		line-height: 1.1;
 		color: var(--h1-color);
 	}
 
@@ -72,53 +68,43 @@
 		margin-top: 0;
 		margin-bottom: 12px;
 		font-size: 25px;
-		line-height: 44px;
 		color: var(--h2-color);
 	}
 
 	/* Body content */
 
 	.main__title {
-		padding-top: 16px;
-		margin-top: 0;
-		margin-bottom: 8px;
+		padding-top: var(--sections-gap);
+		margin: var(--sections-gap) 0 16px;
 		font-size: 25px;
-		line-height: 48px;
 		color: var(--h2-color);
-	}
-
-	.main__text {
-		margin-top: 7px;
-		padding-bottom: 17px;
+		border-top: 1px solid var(--border-color);
 	}
 
 	.main__job-title {
-		padding-top: 5px;
-		margin-bottom: 19px;
-		font-size: 20px;
-		line-height: 24px;
+		font-size: 18px;
+		line-height: 1.1;
 		color: var(--h3-color);
 	}
 
 	.main__job-list {
-		margin-top: 17px;
-		margin-left: 17px;
+		margin-top: 8px;
 	}
 
-	.rename-this-class {
-		gap: 24px;
+	.rename-this-class > *:not(:last-child) {
+		margin-right: 16px;
 	}
 
 	.main__job-info {
-		font-size: 15px;
-		line-height: 1.5;
+		font-size: 18px;
+		line-height: 1.3;
 	}
 
 	/* Elements */
 
 	.link {
-		color: var(--print-text-color);
-		border-width: 1px;
-		border-color: var(--underline-color);
+		/* color: var(--print-text-color); */
+		/* border-width: 1px;
+		border-color: var(--underline-color); */
 	}
 }
