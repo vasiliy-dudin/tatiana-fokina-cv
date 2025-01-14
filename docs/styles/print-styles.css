@@ -1,10 +1,10 @@
 :root {
-	--h1-color: rgb(123, 0, 199);
+	--h1-color: rgb(0, 0, 0);
 	--h2-color: rgb(40, 40, 40);
 	--h3-color: rgb(60, 60, 60);
 	--text-color: rgb(65, 65, 65);
-	--underline-color: rgb(138, 138, 138);
-	--border-color: rgba(0, 0, 0, 0.20);
+	--underline-color: rgb(157, 157, 157);
+	--border-color: #46DF86;
 	--sections-gap: 32px;
 }
 
@@ -105,8 +105,8 @@
 	/* Elements */
 
 	.link {
-		/* color: var(--print-text-color); */
-		/* border-width: 1px;
-		border-color: var(--underline-color); */
+		color: var(--text-color);
+		border-width: 1px;
+		border-color: var(--underline-color);
 	}
 }
