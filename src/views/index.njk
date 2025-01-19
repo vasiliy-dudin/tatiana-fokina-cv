@@ -92,7 +92,7 @@
 				<p class="main__text">
 					<b>{{ section.name }}</b>
 					{% set content = section.content | replace("\n", " ") %}
-					{{ content | safe }}
+					{{ content | urlize | safe }}
 				</p>
 			{% endfor %}
 		</section>
