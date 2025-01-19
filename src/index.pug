@@ -5,9 +5,9 @@ mixin job(title, date, location, position)
 			.rename-this-class
 				h3.main__job-title= title
 				.main__job-info
-					span.main__job-date= date + ' '
+					span.main__job-date= date + ', '
 					span.main__job-type= location
-			span.main__job-position= position
+			span.main__job-position= position + '.'
 		ul.main__job-list
 			if block
 				block
@@ -60,9 +60,9 @@ html(lang="en")
 						
 						+job(
 							'Doka Guide',
-							'August 2022 – Present,',
+							'August 2022 – Present',
 							'remote',
-							'Editor, accessibility engineer, contributor.'
+							'Editor, accessibility engineer, contributor'
 						)
 							+job_li("Architected a content plan, directed and launched the Accessibility section within a 3-month timeframe.")
 							+job_li("Collaborated with over 70 contributors to develop articles on accessibility and other web technologies.")
@@ -73,9 +73,9 @@ html(lang="en")
 
 						+job(
 							'JUG Ru Group',
-							'May 2019 – June 2020,',
+							'May 2019 – June 2020',
 							'St. Petersburg, Russia',
-							'Frontend developer.'
+							'Frontend developer'
 						)
 							+job_li("Led accessibility audits on 10+ conference sites, identifying and fixing accessibility bugs improved Lighthouse accessibility scores by 48% across all projects.")
 							+job_li("Maintained and modernized 10+ legacy projects, improving performance by 15% through the implementation of recommended coding practices.")
@@ -84,9 +84,9 @@ html(lang="en")
 
 						+job(
 							'Self-employment',
-							'December 2016 – May 2019,',
+							'December 2016 – May 2019',
 							'St. Petersburg, Russia',
-							'Freelance web developer.'
+							'Freelance web developer'
 						)
 							+job_li("Conceptualized and implemented 7 landing pages and 3 multi-page sites for clients, strengthening their online presence.")
 							+job_li("Developed 3 templates for MODX and Drupal, simplifying client content management processes.")
@@ -108,14 +108,12 @@ html(lang="en")
 
 					section.main__section(aria-labelledby="education")
 						h2.main__title#education Education
-						article.main__job
-							header.main__job-header
-								.rename-this-class
-									h3.main__job-title St. Petersburg State Institute of Culture
-									.main__job-info
-										span.main__job-date June 2015,
-										span.main__job-type  St. Petersburg, Russia
-								span.main__job-position Specialist's degree in Integrated Library Systems (ILS).
+						+job(
+							'St. Petersburg State Institute of Culture',
+							'June 2015',
+							'St. Petersburg, Russia',
+							"Specialist's degree in Integrated Library Systems (ILS)"
+						)
 
 					section.main__section(aria-labelledby="other")
 						h2.main__title#other Other
