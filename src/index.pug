@@ -1,3 +1,23 @@
+//- mixins.pug
+mixin job(title, date, location, position)
+	article.main__job
+		header.main__job-header
+			.rename-this-class
+				h3.main__job-title= title
+				.main__job-info
+					span.main__job-date= date + ' '
+					span.main__job-type= location
+			span.main__job-position= position
+		ul.main__job-list
+			if block
+				block
+
+mixin job_li(item)
+	li.main__job-item= item
+
+
+
+//----------------------------------------------
 doctype html
 html(lang="en")
 	head
@@ -34,54 +54,45 @@ html(lang="en")
 						p.main__text Demonstrates advanced proficiency in web technologies, including HTML, CSS, and JavaScript. Experiences in W3C standards, web accessibility specifications, and guidelines (WAI-ARIA, WCAG, ATAG).
 						p.main__text Dedicates to creating inclusive digital experiences enabling equal access for all users. Champions accessibility initiatives to transform company development processes, prioritizing user-centered design while fostering a culture of lifelong learning and knowledge exchange.
 
+
 					section.main__section(aria-labelledby="experience")
 						h2.main__title#experience Work experience
 						
-						article.main__job
-							header.main__job-header
-								.rename-this-class
-									h3.main__job-title Doka Guide
-									.main__job-info
-										span.main__job-date August 2022 – Present, 
-										span.main__job-type remote
-								span.main__job-position Editor, accessibility engineer, contributor.
-							
-							ul.main__job-list
-								li.main__job-item Architected a content plan, directed and launched the Accessibility section within a 3-month timeframe.
-								li.main__job-item Collaborated with over 70 contributors to develop articles on accessibility and other web technologies.
-								li.main__job-item Crafted more than 100 articles on topics, such as accessibility, HTML, and CSS.
-								li.main__job-item Executed a WCAG-EM-based accessibility audit, resolving 29 issues on the project's website.
-								li.main__job-item Delivered accessibility guidance through 1:1 communications and GitHub pull request reviews.
-								li.main__job-item Collaborated closely with editors, designers, and developers through weekly agile meetings, ensuring alignment on project goals while enhancing communication strategy and contributing to more efficient workflows.
+						+job(
+							'Doka Guide',
+							'August 2022 – Present,',
+							'remote',
+							'Editor, accessibility engineer, contributor.'
+						)
+							+job_li("Architected a content plan, directed and launched the Accessibility section within a 3-month timeframe.")
+							+job_li("Collaborated with over 70 contributors to develop articles on accessibility and other web technologies.")
+							+job_li("Crafted more than 100 articles on topics, such as accessibility, HTML, and CSS.")
+							+job_li("Executed a WCAG-EM-based accessibility audit, resolving 29 issues on the project's website.")
+							+job_li("Delivered accessibility guidance through 1:1 communications and GitHub pull request reviews.")
+							+job_li("Collaborated closely with editors, designers, and developers through weekly agile meetings, ensuring alignmen on project goals while enhancing communication strategy and contributing to more efficient workflows.")
 
-						article.main__job
-							header.main__job-header
-								.rename-this-class
-									h3.main__job-title JUG Ru Group
-									.main__job-info
-										span.main__job-date May 2019 – June 2020, 
-										span.main__job-type St. Petersburg, Russia
-								span.main__job-position Frontend developer.
-							
-							ul.main__job-list
-								li.main__job-item Led accessibility audits on 10+ conference sites, identifying and fixing accessibility bugs improved Lighthouse accessibility scores by 48% across all projects.
-								li.main__job-item Maintained and modernized 10+ legacy projects, improving performance by 15% through the implementation of recommended coding practices and ensuring functionality for 5,000+ users.
-								li.main__job-item Engineered 4 features for user accounts on the ticket platform in collaboration with designers, frontend, and backend developers, enhancing user experience and functionality.
-								li.main__job-item Co-developed a live streaming conference platform from concept to launch within a 2-month timespan.
+						+job(
+							'JUG Ru Group',
+							'May 2019 – June 2020,',
+							'St. Petersburg, Russia',
+							'Frontend developer.'
+						)
+							+job_li("Led accessibility audits on 10+ conference sites, identifying and fixing accessibility bugs improved Lighthouse accessibility scores by 48% across all projects.")
+							+job_li("Maintained and modernized 10+ legacy projects, improving performance by 15% through the implementation of recommended coding practices.")
+							+job_li("Engineered 4 features for user accounts on the ticket platform in collaboration with designers, frontend, and backend developers.")
+							+job_li("Co-developed a live streaming conference platform from concept to launch within a 2-month timespan.")
 
-						article.main__job
-							header.main__job-header
-								.rename-this-class
-									h3.main__job-title Self-employment
-									.main__job-info
-										span.main__job-date December 2016 – May 2019, 
-										span.main__job-type St. Petersburg, Russia
-								span.main__job-position Freelance web developer.
-							
-							ul.main__job-list
-								li.main__job-item Conceptualized and implemented 7 landing pages and 3 multi-page sites for clients, strengthening their online presence.
-								li.main__job-item Developed 3 templates for MODX and Drupal, simplifying client content management processes.
-								li.main__job-item Accomplished automatic testing across 5 client projects, detecting and rectifying bugs and technical issues while enhancing accessibility features to meet WCAG 2.1 level AA.
+						+job(
+							'Self-employment',
+							'December 2016 – May 2019,',
+							'St. Petersburg, Russia',
+							'Freelance web developer.'
+						)
+							+job_li("Conceptualized and implemented 7 landing pages and 3 multi-page sites for clients, strengthening their online presence.")
+							+job_li("Developed 3 templates for MODX and Drupal, simplifying client content management processes.")
+							+job_li("Accomplished automatic testing across 5 client projects, detecting and rectifying bugs and technical issues.")
+					
+					
 
 					section.main__section(aria-labelledby="skills")
 						h2.main__title#skills Skills
