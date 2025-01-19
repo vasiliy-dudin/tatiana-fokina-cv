@@ -10,37 +10,35 @@
 			{% endfor %}
 		</section>
 
-		<hr class="main__divider">
-
 		<section class="main__section" aria-labelledby="experience">
 			<h2 class="main__title" id="experience">
 				{{ cv.experience.title }}
 			</h2>
 			{% for job in ["last", "previous", "initial"] %}
 				{% if cv.experience[job] %}
-					<article class="activity">
-						<header class="activity__header">
-							<div class="activity__header-wrapper">
-								<h3 class="activity__place">
+					<article class="main__job">
+						<header class="main__job-header">
+							<div class="rename-this-class">
+								<h3 class="main__job-title">
 									{{ cv.experience[job].company }}
 								</h3>
-								<div class="activity__details">
-									<span class="activity__details-item">
+								<div class="main__job-info">
+									<span class="main__job-date">
 										{{ cv.experience[job]["time period"] }},
 									</span>
-									<span class="activity__details-item">
+									<span class="main__job-type">
 										{{ cv.experience[job].location }}
 									</span>
 								</div>
 							</div>
-							<p class="activity__position">
+							<span class="main__job-position">
 								{{ cv.experience[job]["job title"] }}
-							</p>
+							</span>
 						</header>
-						<ul class="activity__list">
+						<ul class="main__job-list">
 							{% for achievement in cv.experience[job].achievements %}
 								{% if achievement %}
-									<li class="activity__list-item">
+									<li class="main__job-item">
 										{{ achievement }}
 									</li>
 								{% endif %}
@@ -50,8 +48,6 @@
 				{% endif %}
 			{% endfor %}
 		</section>
-
-		<hr class="main__divider">
 
 		<section class="main__section" aria-labelledby="skills">
 			<h2 class="main__title" id="skills">
@@ -66,31 +62,27 @@
 			{% endfor %}
 		</section>
 
-		<hr class="main__divider">
-
 		<section class="main__section" aria-labelledby="education">
 			<h2 class="main__title" id="education">
 				{{ cv.education.title }}
 			</h2>
-			<article class="activity">
-				<header class="activity__header">
-					<div class="activity__header-wrapper">
-						<h3 class="activity__place">
+			<article class="main__job">
+				<header class="main__job-header">
+					<div class="rename-this-class">
+						<h3 class="main__job-title">
 							{{ cv.education.place }}
 						</h3>
-						<div class="activity__details">
-							<span class="details__item">{{ cv.education.year }},</span>
-							<span class="details__item">{{ cv.education.location }}</span>
+						<div class="main__job-info">
+							<span class="main__job-date">{{ cv.education.year }},</span>
+							<span class="main__job-type">{{ cv.education.location }}</span>
 						</div>
 					</div>
-					<p class="activity__position">
+					<span class="main__job-position">
 						{{ cv.education.degree }}
-					</p>
+					</span>
 				</header>
 			</article>
 		</section>
-
-		<hr class="main__divider">
 
 		<section class="main__section" aria-labelledby="other">
 			<h2 class="main__title" id="other">
@@ -100,7 +92,7 @@
 				<p class="main__text">
 					<b>{{ section.name }}</b>
 					{% set content = section.content | replace("\n", " ") %}
-					{{ content | urlize | safe }}
+					{{ content | safe }}
 				</p>
 			{% endfor %}
 		</section>

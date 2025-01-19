@@ -20,7 +20,7 @@
 		margin: 0;
 		font-family: Arial, sans-serif;
 		font-size: 16px;
-		line-height: 24px;
+		line-height: 1.5;
 		color: var(--text-color);
 		background: none;
 	}
@@ -65,7 +65,8 @@
 		color: var(--h1-color);
 	}
 
-	.main__title {
+	.header__job {
+		padding-top: 4px;
 		margin-top: 0;
 		margin-bottom: 12px;
 		font-size: 25px;

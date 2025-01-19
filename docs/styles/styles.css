@@ -5,15 +5,6 @@
 	--link-color: #454948;
 	--underline-color: #6f7876;
 	--decorative-color: rgb(69, 73, 72);
-
-	--step--2: clamp(0.3889rem, 0.3226rem + 0.3119vw, 0.5rem);
-	--step--1: clamp(0.5833rem, 0.4839rem + 0.4678vw, 0.75rem);
-	--step-0: clamp(0.875rem, 0.7259rem + 0.7018vw, 1.125rem);
-	--step-1: clamp(1.3125rem, 1.0888rem + 1.0526vw, 1.6875rem);
-	--step-2: clamp(1.9688rem, 1.6332rem + 1.5789vw, 2.5313rem);
-	--step-3: clamp(2.9531rem, 2.4498rem + 2.3684vw, 3.7969rem);
-	--step-4: clamp(4.4297rem, 3.6748rem + 3.5526vw, 5.6953rem);
-	--step-5: clamp(6.6445rem, 5.5121rem + 5.3289vw, 8.543rem);
 }
 
 *,
@@ -46,13 +37,9 @@ body {
 	border-radius: 10px;
 }
 
-.main__divider {
-	display: none;
-}
-
 /* Elements */
 
-.activity__header-wrapper {
+.rename-this-class {
 	display: flex;
 	align-items: baseline;
 }
@@ -60,9 +47,7 @@ body {
 	margin-right: 20px;
 }
 
-.header__link,
-.header__contacts-link,
-.main__link {
+.link {
 	text-decoration: none;
 	color: var(--link-color);
 	border-bottom: 1px solid var(--underline-color);
@@ -81,6 +66,7 @@ body {
 
 .header__contacts-list {
 	display: inline-flex;
+	/* align-content: space-between; */
 	flex-wrap: wrap;
 	align-items: start;
 	margin: 0;
@@ -97,7 +83,7 @@ body {
 	align-items: center;
 } */
 
-.header__contacts-link-text--pdf {
+.header__contact-link-pdf {
 	display: none;
 }
 
@@ -118,7 +104,7 @@ body {
 	font-weight: 700;
 }
 
-.header__position {
+.header__job {
 	grid-area: 2 / 1 / 2 / 3;
 	font-size: 32px;
 	font-style: normal;
@@ -135,15 +121,6 @@ body {
 	border: 3px solid var(--underline-color);
 	padding: 4px 12px;
 	border-radius: 15px;
-}
-
-.header__link::before {
-	content: "";
-	display: block;
-	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWZpbGUtdGV4dCI+PHBhdGggZD0iTTE1IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY3WiIvPjxwYXRoIGQ9Ik0xNCAydjRhMiAyIDAgMCAwIDIgMmg0Ii8+PHBhdGggZD0iTTEwIDlIOCIvPjxwYXRoIGQ9Ik0xNiAxM0g4Ii8+PHBhdGggZD0iTTE2IDE3SDgiLz48L3N2Zz4=")
-		no-repeat;
-	width: 16px;
-	height: 16px;
 }
 
 /* Body content */
@@ -181,4 +158,8 @@ body {
 	margin-top: 16px;
 	margin-left: 32px;
 	padding: 0;
+}
+
+/* b {
+	font-weight: 500;
 } */
