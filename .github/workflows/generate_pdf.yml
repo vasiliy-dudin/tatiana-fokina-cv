@@ -3,12 +3,9 @@ name: Generate PDF
 on:
   push:
     paths:
-      - "docs/index.html"
-      - "docs/styles/styles.css"
-      - "docs/styles/print-styles.css"
-      - "src/data/cv.yaml"
+      - "dist/index.html"
+      - "dist/styles.css"
       - "src/data/site.yaml"
-      - "src/views/**"
 
 permissions:
   contents: write
@@ -52,6 +49,6 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add docs/tatiana-fokina-cv.pdf
+          git add dist/tatiana-fokina-cv.pdf
           git commit -m "Update PDF" || exit 0
           git push

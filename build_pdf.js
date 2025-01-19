@@ -61,13 +61,12 @@ async function addPDFMeta(pdfPath, metadata) {
 
 // Generate PDF with puppeteer
 async function generatePDF() {
-	const outDir = path.join(__dirname, "..", "docs");
-	const dataDir = path.join(__dirname, "..", "src", "data");
+	const outDir = path.join(__dirname, "dist");
+	const dataDir = path.join(__dirname, "src", "data");
 
 	const htmlPath = path.join(outDir, "index.html");
 	const cssPath = [
-		path.join(outDir, "styles", "styles.css"),
-		path.join(outDir, "styles", "print-styles.css"),
+		path.join(outDir, "styles.css")
 	];
 	const dataPath = path.join(dataDir, "site.yaml");
 	const outputPath = path.join(outDir, "tatiana-fokina-cv.pdf");

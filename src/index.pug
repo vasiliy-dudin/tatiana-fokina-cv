@@ -1,0 +1,133 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name="description" content="Work in progress...")
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")	
+		title Tatiana Fokina Resume
+		link(href="./styles.css" rel="stylesheet")
+		
+	body
+		.container
+			header.header
+				.header__desc
+					h1.header__title(aria-describedby="job-title") Tatiana Fokina
+					h2.header__position#job-title Expert Accessibility Engineer
+				
+				.header__contacts
+					ul.header__contacts-list
+						li.header__contacts-item Tbilisi, Georgia
+						li.header__contacts-item
+							a.header__contacts-link(href="mailto:fokinatatian@gmail.com") fokinatatian@gmail.com
+						li.header__contacts-item
+							a.header__contacts-link(href="http://www.linkedin.com/in/tatiana-fokina/")
+								span.header__contacts-link-text.header__contacts-link-text--pdf linkedin.com/in/tatiana-fokina
+						li.header__contacts-item
+							a.header__contacts-link(href="https://fokina-dev.ru")
+								span.header__contacts-link-text.header__contacts-link-text--pdf fokina-dev.ru
+
+			main
+				.main
+					section.main__section
+						p.main__text Expert Accessibility Engineer with 5+ years in Web/Frontend Development, specializing in designing intuitive interfaces that prioritize user needs at the fundamental principle in the development process—certified professional in accessibility core competencies (CPACC).
+						p.main__text Demonstrates advanced proficiency in web technologies, including HTML, CSS, and JavaScript. Experiences in W3C standards, web accessibility specifications, and guidelines (WAI-ARIA, WCAG, ATAG).
+						p.main__text Dedicates to creating inclusive digital experiences enabling equal access for all users. Champions accessibility initiatives to transform company development processes, prioritizing user-centered design while fostering a culture of lifelong learning and knowledge exchange.
+
+					section.main__section(aria-labelledby="experience")
+						h2.main__title#experience Work experience
+						
+						article.main__job
+							header.main__job-header
+								.rename-this-class
+									h3.main__job-title Doka Guide
+									.main__job-info
+										span.main__job-date August 2022 – Present, 
+										span.main__job-type remote
+								span.main__job-position Editor, accessibility engineer, contributor.
+							
+							ul.main__job-list
+								li.main__job-item Architected a content plan, directed and launched the Accessibility section within a 3-month timeframe.
+								li.main__job-item Collaborated with over 70 contributors to develop articles on accessibility and other web technologies.
+								li.main__job-item Crafted more than 100 articles on topics, such as accessibility, HTML, and CSS.
+								li.main__job-item Executed a WCAG-EM-based accessibility audit, resolving 29 issues on the project's website.
+								li.main__job-item Delivered accessibility guidance through 1:1 communications and GitHub pull request reviews.
+								li.main__job-item Collaborated closely with editors, designers, and developers through weekly agile meetings, ensuring alignment on project goals while enhancing communication strategy and contributing to more efficient workflows.
+
+						article.main__job
+							header.main__job-header
+								.rename-this-class
+									h3.main__job-title JUG Ru Group
+									.main__job-info
+										span.main__job-date May 2019 – June 2020, 
+										span.main__job-type St. Petersburg, Russia
+								span.main__job-position Frontend developer.
+							
+							ul.main__job-list
+								li.main__job-item Led accessibility audits on 10+ conference sites, identifying and fixing accessibility bugs improved Lighthouse accessibility scores by 48% across all projects.
+								li.main__job-item Maintained and modernized 10+ legacy projects, improving performance by 15% through the implementation of recommended coding practices and ensuring functionality for 5,000+ users.
+								li.main__job-item Engineered 4 features for user accounts on the ticket platform in collaboration with designers, frontend, and backend developers, enhancing user experience and functionality.
+								li.main__job-item Co-developed a live streaming conference platform from concept to launch within a 2-month timespan.
+
+						article.main__job
+							header.main__job-header
+								.rename-this-class
+									h3.main__job-title Self-employment
+									.main__job-info
+										span.main__job-date December 2016 – May 2019, 
+										span.main__job-type St. Petersburg, Russia
+								span.main__job-position Freelance web developer.
+							
+							ul.main__job-list
+								li.main__job-item Conceptualized and implemented 7 landing pages and 3 multi-page sites for clients, strengthening their online presence.
+								li.main__job-item Developed 3 templates for MODX and Drupal, simplifying client content management processes.
+								li.main__job-item Accomplished automatic testing across 5 client projects, detecting and rectifying bugs and technical issues while enhancing accessibility features to meet WCAG 2.1 level AA.
+
+					section.main__section(aria-labelledby="skills")
+						h2.main__title#skills Skills
+						p.main__text
+							b Languages and frameworks.
+							|  HTML, JavaScript (ECMAScript 6), TypeScript, Angular, Next.js, CSS, Sass/SCSS, Stylus, Nunjacks.
+						p.main__text
+							b Accessibility.
+							|  WAI-ARIA 1.2, WCAG 2.2, ATAG 2.0, WCAG-EM 1.0, NVDA, JAWS, VoiceOver (desktop and mobile), TalkBack, axe DevTools, Wave Evaluation Tool (WAVE), Accessibility Insights, accessibility bookmarklets, Section 508, EN 301 549, Web Accessibility Directive (WAD), European Accessibility Act (EAA).
+						p.main__text
+							b Tools and platforms.
+							|  Git, GitHub, GitLab, Gulp, Storybook, 11ty, Parcel, Figma.
+
+					section.main__section(aria-labelledby="education")
+						h2.main__title#education Education
+						article.main__job
+							header.main__job-header
+								.rename-this-class
+									h3.main__job-title St. Petersburg State Institute of Culture
+									.main__job-info
+										span.main__job-date June 2015,
+										span.main__job-type  St. Petersburg, Russia
+								span.main__job-position Specialist's degree in Integrated Library Systems (ILS).
+
+					section.main__section(aria-labelledby="other")
+						h2.main__title#other Other
+						p.main__text
+							b Courses and certificates.
+							|  Practical Accessibility course, 
+							a.main__link.external-link(href="https://www.credly.com/badges/85bed477-9084-44c7-9d4e-1526c5ee99ff/public_url") CPACC
+							| .
+						p.main__text
+							b Community experience.
+							|  Google's Women Techmakers ambassador (WTM); host 
+							a.main__link.external-link(href="https://inclusivepineapple.github.io/") Inclusive Pineapple
+							|  podcast; organizer of 
+							a.main__link.external-link(href="https://www.youtube.com/playlist?list=PLTdS5E3zupkGg0FoMoWB5FD2tlBrSWUQB/") pitera11y_meetup
+							|  and Doka Guide meetup.
+						p.main__text
+							b Publications and talks.
+							|  Translation of 
+							a.main__link.external-link(href="https://a11ymyths.com/ru/") Accessibility Myths project
+							| ; post 
+							a.main__link.external-link(href="https://a11y-blog.dev/en/articles/understanding-a-skip-link/") Understanding Skip Links
+							|  on professional blog; article 
+							a.main__link.external-link(href="https://doka.guide/a11y/live-region/") What Are ARIA Live Regions
+							|  on Doka Guide; talk 
+							a.main__link.external-link(href="https://youtu.be/F64bGVrI4TY?si=7tzAj-u0EA0211K3") Accessibility and Typography
+							|  at Tbilisi A11y & UX Day.

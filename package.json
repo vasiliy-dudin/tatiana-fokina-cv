@@ -2,21 +2,20 @@
   "name": "cv-project",
   "author": "Tatiana Fokina",
   "description": "Template for my CV with auto generation PDF version",
-  "main": "generate_pdf.js",
+  "main": "build_pdf.js",
   "license": "ISC",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "build": "node scripts/build.js",
-    "generate-pdf": "node scripts/generate_pdf.js"
+    "build": "npm run _build:sass && npm run _build:pug",
+    "build-pdf": "node build_pdf.js",
+    "_build:pug": "node build_pug.js",
+    "_build:sass": "sass --no-source-map src/styles.sass:dist/styles.css"
   },
   "dependencies": {
     "fs-extra": "^11.2.0",
-    "html-minifier-terser": "^7.2.0",
     "js-yaml": "^4.1.0",
-    "nunjucks": "^3.2.4",
-    "nunjucks-in-yaml": "^1.0.4",
-    "nunjucks-to-html": "^1.1.0",
     "pdf-lib": "^1.17.1",
-    "puppeteer": "^23.5.1"
+    "pug": "^3.0.3",
+    "puppeteer": "^23.5.1",
+    "sass": "^1.83.4"
   }
 }
