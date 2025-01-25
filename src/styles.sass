@@ -10,7 +10,7 @@
 	--text-color: rgb(65, 65, 65)
 	--underline-color: rgb(157, 157, 157)
 	--border-color: #46DF86
-	--sections-gap: 32px
+	--sections-gap: 24px
 
 @page
 	size: A4
@@ -55,6 +55,9 @@ body
 	margin-bottom: var(--sections-gap)
 	padding: 0 0 var(--sections-gap)
 	border-bottom: 1px solid var(--border-color)
+
+	&__contacts
+		font-size: 15px
 	
 	&__contacts-list
 		display: inline-flex
@@ -64,7 +67,7 @@ body
 		padding: 0
 		list-style: none
 		> *:not(:last-child)
-			margin-right: 18px
+			margin-right: 16px
 
 	&__contact-link
 		&-pdf
