@@ -5,16 +5,23 @@
   "main": "build_pdf.js",
   "license": "ISC",
   "scripts": {
-    "build": "npm run _build:sass && npm run _build:pug",
+    "build": "npm-run-all -p _build:*",
     "build-pdf": "node build_pdf.js",
-    "_build:pug": "node build_pug.js",
-    "_build:sass": "sass --no-source-map src/styles.sass:dist/styles.css"
+    "_build:pug": "pug src/ --out dist/ --pretty",
+    "_build:sass": "sass --no-source-map src/styles.sass:dist/styles.css",
+    "watch": "npm-run-all -p _watch:*",
+    "_watch:pug": "pug --watch src/ --out dist/ --pretty",
+    "_watch:sass": "sass --no-source-map --watch src/styles.sass:dist/styles.css",
+    "_watch:serve": "browser-sync start --server dist --files 'dist/*.html, dist/*.css' --no-notify --no-open"
   },
   "dependencies": {
+    "browser-sync": "^3.0.3",
     "fs-extra": "^11.2.0",
     "js-yaml": "^4.1.0",
+    "npm-run-all": "^4.1.5",
     "pdf-lib": "^1.17.1",
     "pug": "^3.0.3",
+    "pug-cli": "1.0.0-alpha6",
     "puppeteer": "^23.5.1",
     "sass": "^1.83.4"
   }
