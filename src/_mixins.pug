@@ -1,0 +1,15 @@
+mixin job(title, date, location, position)
+	article.main__job
+		header.main__job-header
+			.rename-this-class
+				h3.main__job-title= title
+				.main__job-info
+					span.main__job-date= date + ', '
+					span.main__job-type= location
+			span.main__job-position= position + '.'
+		ul.main__job-list
+			if block
+				block
+
+mixin job_li(item)
+	li.main__job-item= item

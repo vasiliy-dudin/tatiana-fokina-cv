@@ -1,16 +1,16 @@
 {
-  "name": "cv-project",
-  "author": "Tatiana Fokina",
-  "description": "Template for my CV with auto generation PDF version",
+  "name": "cv-generator",
+  "author": "Vasiliy Dudin",
+  "description": "",
   "main": "build_pdf.js",
   "license": "ISC",
   "scripts": {
     "build": "npm-run-all -p _build:*",
     "build-pdf": "node build_pdf.js",
-    "_build:pug": "pug src/ --out dist/ --pretty",
+    "_build:pug": "pug src/content/ --out dist/ --pretty",
     "_build:sass": "sass --no-source-map src/styles.sass:dist/styles.css",
     "watch": "npm-run-all -p _watch:*",
-    "_watch:pug": "pug --watch src/ --out dist/ --pretty",
+    "_watch:pug": "pug --watch src/content/ --out dist/ --pretty",
     "_watch:sass": "sass --no-source-map --watch src/styles.sass:dist/styles.css",
     "_watch:serve": "browser-sync start --server dist --files 'dist/*.html, dist/*.css' --no-notify --no-open"
   },

@@ -1,52 +1,35 @@
-//- mixins.pug
-mixin job(title, date, location, position)
-	article.main__job
-		header.main__job-header
-			.rename-this-class
-				h3.main__job-title= title
-				.main__job-info
-					span.main__job-date= date + ', '
-					span.main__job-type= location
-			span.main__job-position= position + '.'
-		ul.main__job-list
-			if block
-				block
-
-mixin job_li(item)
-	li.main__job-item= item
+include ../_variables
+include ../_mixins
+- var $job_title = 'Product Designer'
+- var $title = 'Vasilii Dudin CV'
 
 
-
-//----------------------------------------------
 doctype html
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		meta(name="description" content="Work in progress...")
-		meta(http-equiv="X-UA-Compatible" content="ie=edge")
-		title Tatiana Fokina Resume
-		link(href="./styles.css" rel="stylesheet")
+		title= $title
+		link(href="../styles.css" rel="stylesheet")
 		
 	body
 		.container
 			header.header
 				.header__desc
-					h1.header__title(aria-describedby="job-title") Tatiana Fokina
-					h2.header__position#job-title Accessibility Engineer
+					h1.header__title(aria-describedby="job-title")= $name
+					h2.header__position#job-title= $job_title
 				
 				.header__contacts
 					ul.header__contacts-list
-						li.header__contacts-item London, UK
+						li.header__contacts-item= $location
 						li.header__contacts-item
-							a.header__contacts-link(href="mailto:fokinatatian@gmail.com") fokinatatian@gmail.com
-						li.header__contacts-item +44-3887-844-105
+							a.header__contacts-link(href=`mailto:${email}`)= $email
+						li.header__contacts-item= $phone
 						li.header__contacts-item
-							a.header__contacts-link(href="http://www.linkedin.com/in/tatiana-fokina/")
-								span.header__contacts-link-text.header__contacts-link-text--pdf linkedin.com/in/tatiana-fokina
+							a.header__contacts-link(href=$linkedin_url)
+								span.header__contacts-link-text.header__contacts-link-text--pdf= $linkedin_text
 						li.header__contacts-item
-							a.header__contacts-link(href="https://fokina-dev.ru")
-								span.header__contacts-link-text.header__contacts-link-text--pdf Website
+							a.header__contacts-link(href=$website)
+								span.header__contacts-link-text.header__contacts-link-text--pdf Portfolio
 
 			main
 				.main

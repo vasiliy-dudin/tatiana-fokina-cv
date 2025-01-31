@@ -59,30 +59,17 @@ async function addPDFMeta(pdfPath, metadata) {
 	await fs.writeFile(pdfPath, pdfBytes);
 }
 
-// Generate PDF with puppeteer
-async function generatePDF() {
-	const outDir = path.join(__dirname, "dist");
-	const dataDir = path.join(__dirname, "src", "data");
-
-	const htmlPath = path.join(outDir, "index.html");
-	const cssPath = [
-		path.join(outDir, "styles.css")
-	];
-	const dataPath = path.join(dataDir, "site.yaml");
-	const outputPath = path.join(outDir, "tatiana-fokina-cv.pdf");
+async function generatePDF(htmlFile) {
+	const baseName = path.basename(htmlFile, '.html');
+	const outputPath = path.join(__dirname, "dist", `${baseName}.pdf`);
+	const htmlPath = path.join(__dirname, "dist", htmlFile);
+	const cssPath = path.join(__dirname, "dist/styles.css");
+	const dataPath = path.join(__dirname, "src/pdf-metadata.yaml");
 
 	try {
-		console.log("Generating PDF ⏳");
-
 		const html = await fs.readFile(htmlPath, "utf8");
-		const css = await Promise.all(
-			cssPath.map((path) => fs.readFile(path, "utf8"))
-		);
-		const combinedCss = css.join("\n");
-
-		const content = `
-		${html}<style>${combinedCss}</style>
-		`;
+		const css = await fs.readFile(cssPath, "utf8");
+		const content = `${html}<style>${css}</style>`;
 
 		const yamlFile = await fs.readFile(dataPath, "utf8");
 		const metadata = yaml.load(yamlFile);
@@ -110,12 +97,28 @@ async function generatePDF() {
 		await addPDFMeta(outputPath, metadata);
 
 		const stats = await fs.stat(outputPath);
-
-		console.log("PDF generated successfully 🎉");
-		console.log(`Final PDF file size: ${stats.size} bytes`);
+		console.log(`✅ Generated ${baseName}.pdf (${stats.size} bytes)`);
 	} catch (error) {
-		console.error("An error occurred:", error);
+		console.error(`❌ Error processing ${htmlFile}:`, error);
 	}
 }
 
-generatePDF();
+async function processHtmlFiles() {
+	try {
+		const files = await fs.readdir(path.join(__dirname, "dist"));
+		const htmlFiles = files.filter(file => file.endsWith(".html"));
+
+		console.log(`Found ${htmlFiles.length} HTML files to process`);
+		
+		for (const htmlFile of htmlFiles) {
+			await generatePDF(htmlFile);
+		}
+		
+		console.log("✨ Completed");
+	} catch (error) {
+		console.error("Fatal error:", error);
+		process.exit(1);
+	}
+}
+
+processHtmlFiles();
